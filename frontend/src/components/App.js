@@ -4,6 +4,7 @@ import Signup from "./Signup"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import {Container} from "react-bootstrap"
 import Navigator from "./Navigator";
+import Login from "./Login"
 
 function App() {
   return (
@@ -12,10 +13,12 @@ function App() {
         <div className="w-100">  
           <Navigator/>
           <Signup/>
+          <Switch>
+            <Route exact path="/" component={Login} />
+          </Switch>
         </div>
       </Container>
     </Router>
-    
   );
 }
 
