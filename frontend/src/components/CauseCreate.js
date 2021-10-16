@@ -19,7 +19,7 @@ export default function CauseCreate() {
             <h2 className="text-center">Create a Cause</h2>
             <Card.Body>
                 <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="mb-3">
                         <Form.Label>Name Your Cause</Form.Label>
                         <Form.Control placeholder="Enter cause name" ref={nameRef}/>
                     </Form.Group>

@@ -105,5 +105,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
   logout,
-  createCause
+  createCause,
 };

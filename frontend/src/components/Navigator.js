@@ -12,7 +12,7 @@ export default function Navigator() {
                 </Nav>
 
                 <Nav>
-                    <Nav.Link>Sign Up</Nav.Link>
+                    <Nav.Link href="/">Sign Up</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
