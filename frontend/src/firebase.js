@@ -1,9 +1,46 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+
+const app = firebase.initializeApp(firebaseConfig);
+const auth = app.auth();
+const db = app.firestore();
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+
+const signInWithGoogle = async () => {
+  try {
+    const res = await auth.signInWithPopup(googleProvider);
+    const user = res.user;
+    const query = await db
+      .collection("users")
+      .where("uid", "==", user.uid)
+      .get();
+    if (query.docs.length === 0) {
+      await db.collection("users").add({
+        uid: user.uid,
+        name: user.displayName,
+        authProvider: "google",
+        email: user.email,
+      });
+    }
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+const signInWithEmailAndPassword = async (email, password) => {
+  try {
+    await auth.signInWithEmailAndPassword(email, password);
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
 const firebaseConfig = {
   apiKey: "AIzaSyD0W6DqcOFuIO93ntOpmw4R26WmkqHWed4",
   authDomain: "supportio.firebaseapp.com",
