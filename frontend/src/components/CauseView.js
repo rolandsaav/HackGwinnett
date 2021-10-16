@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col, Card } from 'react-bootstrap'
 import CauseScroll from './CauseScroll'
 
 export default function CauseView() {
@@ -13,8 +13,17 @@ export default function CauseView() {
                 </Col>
 
                 <Col sm={6}>
-                    {!selectedCause && <h2>Select a Cause</h2>}
-                    <h1>{selectedCause.name}</h1>
+                    {!selectedCause.name && <h1>Select a Cause</h1>}
+                    {selectedCause.name && 
+                    <Card className="text-center mt-5">
+                        <Card.Body>
+                            <Card.Title> {selectedCause.name} </Card.Title>
+                        <h1>{selectedCause.name}</h1>
+                        <h3>{selectedCause.desc}</h3>
+                        </Card.Body>
+                    </Card>
+                    }
+                    
                 </Col>
             </Row>
 

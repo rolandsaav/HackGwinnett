@@ -1,17 +1,22 @@
 import React, {Fragment, useState, useRef} from 'react'
 import {Card, Form, Button, Container} from 'react-bootstrap'
-import { createCause } from '../firebase'
+import { createCause, storage } from '../firebase'
 
 export default function CauseCreate() {
-    const [cause, setCause] = useState()
     const nameRef = useRef();
     const descRef = useRef();
+    const imageRef = useRef();
 
     async function handleSubmit(e) {
         e.preventDefault()
         createCause(nameRef.current.value, descRef.current.value)
 
       }
+    const handleUpload = e => {
+        e.preventDefault()
+
+        
+    }
 
     return (
         <Container style={{maxWidth: 800}}>
@@ -31,7 +36,7 @@ export default function CauseCreate() {
 
                     <Form.Group className="mb-3" controlId="causeImage">
                         <Form.Label>Cause Post Image</Form.Label>
-                        <Form.Control type="file" size="lg"/>
+                        <Form.Control type="file" size="lg" ref={imageRef}/>
                     </Form.Group>
 
                     <Button variant="primary" type="submit">
