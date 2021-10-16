@@ -7,6 +7,9 @@ import {Container} from "react-bootstrap"
 import Navigator from "./Navigator";
 import Login from "./Login"
 import CauseCreate from "./CauseCreate";
+import Register from "./Register";
+import Reset from "./Reset";
+import Dashboard from "./Dashboard";
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
               <Route exact path="/" component={Login} />
               <Route path="/findcause" component={CauseView}/>
               <Route path="/createcause" component={CauseCreate}/>
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/reset" component={Reset} />
+              <Route exact path="/dashboard" component={Dashboard} />
             </Switch>
           </div>
         </Router>
