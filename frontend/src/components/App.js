@@ -7,7 +7,7 @@ import Navigator from "./Navigator";
 function App() {
   return (
     <Router>
-      <Container className="d-flex justify-content-center"
+      <Container fluid className="d-flex justify-content-center"
       style={{ minHeight: "100vh" }}>  
         <div className="w-100">  
           <Navigator/>
