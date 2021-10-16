@@ -5,20 +5,21 @@ import CauseView from "./CauseView";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import {Container} from "react-bootstrap"
 import Navigator from "./Navigator";
+import Login from "./Login"
 
 function App() {
   return (
       <Container fluid className="d-flex justify-content-center" style={{ minHeight: "100vh" }}>  
-        <div className="w-100">  
-          <Router>
+        <Router>
+          <div className="w-100">  
             <Navigator/>
+            <Signup/>
             <Switch>
-              <CauseView/>
+              <Route exact path="/" component={Login} />
             </Switch>
-          </Router>
-        </div>
+          </div>
+        </Router>
       </Container>
-    
   );
 }
 
