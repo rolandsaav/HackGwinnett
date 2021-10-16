@@ -8,7 +8,11 @@ export default function Navigator() {
                 <Navbar.Brand>charitable.io</Navbar.Brand>
                 <Nav className="me-auto">
                     <Nav.Link>Find a Cause</Nav.Link>
-                    <Nav.Link>Creat a Cause</Nav.Link>
+                    <Nav.Link>Create a Cause</Nav.Link>
+                </Nav>
+
+                <Nav>
+                    <Nav.Link>Sign Up</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
