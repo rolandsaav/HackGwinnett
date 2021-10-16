@@ -85,6 +85,18 @@ const logout = () => {
   auth.signOut();
 };
 
+const createCause = async (name, description) => {
+  try {
+    await db.collection("causes").add({
+      name,
+      description
+    });
+  } catch (err){
+    console.error(err);
+    alert(err.message)
+  }
+}
+
 export {
   auth,
   db,
@@ -93,4 +105,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
   logout,
+  createCause
 };
